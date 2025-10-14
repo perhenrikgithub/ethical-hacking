@@ -1,0 +1,1 @@
+cmd_/home/seed/ethical-hacking/lab3/Files/kernel_module/Module.symvers := sed 's/\.ko$$/\.o/' /home/seed/ethical-hacking/lab3/Files/kernel_module/modules.order | scripts/mod/modpost -m -a  -o /home/seed/ethical-hacking/lab3/Files/kernel_module/Module.symvers -e -i Module.symvers   -T -

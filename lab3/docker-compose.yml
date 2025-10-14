@@ -2,7 +2,7 @@ version: "3"
 
 services:
     HostA:
-        image: handsonsecurity/seed-ubuntu:large
+        image: handsonsecurity/seed-ubuntu:large-arm
         container_name: hostA-10.9.0.5
         tty: true
         cap_add:
@@ -19,7 +19,7 @@ services:
                  "
 
     Host1:
-        image: handsonsecurity/seed-ubuntu:large
+        image: handsonsecurity/seed-ubuntu:large-arm
         container_name: host1-192.168.60.5
         tty: true
         cap_add:
@@ -35,7 +35,7 @@ services:
                  "
                   
     Host2:
-        image: handsonsecurity/seed-ubuntu:large
+        image: handsonsecurity/seed-ubuntu:large-arm
         container_name: host2-192.168.60.6
         tty: true
         cap_add:
@@ -51,7 +51,7 @@ services:
                  "
 
     Host3:
-        image: handsonsecurity/seed-ubuntu:large
+        image: handsonsecurity/seed-ubuntu:large-arm
         container_name: host3-192.168.60.7
         tty: true
         cap_add:

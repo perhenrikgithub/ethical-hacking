@@ -1,0 +1,1 @@
+cmd_/home/seed/ethical-hacking/lab3/Files/kernel_module/hello.ko := ld -r -EL  -maarch64elf -z noexecstack --build-id=sha1  -T scripts/module.lds -o /home/seed/ethical-hacking/lab3/Files/kernel_module/hello.ko /home/seed/ethical-hacking/lab3/Files/kernel_module/hello.o /home/seed/ethical-hacking/lab3/Files/kernel_module/hello.mod.o;  true

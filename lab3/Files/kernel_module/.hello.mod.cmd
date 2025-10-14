@@ -1,0 +1,1 @@
+cmd_/home/seed/ethical-hacking/lab3/Files/kernel_module/hello.mod := { echo  /home/seed/ethical-hacking/lab3/Files/kernel_module/hello.o;  echo; } > /home/seed/ethical-hacking/lab3/Files/kernel_module/hello.mod
