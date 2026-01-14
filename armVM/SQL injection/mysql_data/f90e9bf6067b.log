@@ -1,0 +1,122 @@
+/usr/sbin/mysqld, Version: 8.0.37 (MySQL Community Server - GPL). started with:
+Tcp port: 3306  Unix socket: /var/run/mysqld/mysqld.sock
+Time                 Id Command    Argument
+2025-11-04T13:16:36.751810Z	   36 Query	show variables like '%general%'
+2025-11-04T13:19:45.258739Z	   36 Query	show variables like '%log%'
+2025-11-04T13:22:17.474074Z	   37 Connect	seed@10.9.0.5 on sqllab_users using TCP/IP
+2025-11-04T13:22:17.476256Z	   37 Query	SELECT id, name, eid, salary, birth, ssn, phoneNumber, address, email,nickname,Password
+      FROM credential
+      WHERE name= 'alice' and Password='fdbe918bdae83000aa54747fc95fe0470fff4976'
+2025-11-04T13:22:17.479577Z	   37 Quit	
+2025-11-04T13:24:10.218153Z	   38 Connect	seed@10.9.0.5 on sqllab_users using TCP/IP
+2025-11-04T13:24:10.219973Z	   38 Query	SELECT id, name, eid, salary, birth, ssn, phoneNumber, address, email,nickname,Password
+      FROM credential
+      WHERE name= 'admin'; -- ' and Password='86f7e437faa5a7fce15d1ddcb9eaeaea377667b8'
+2025-11-04T13:24:10.223710Z	   39 Connect	seed@10.9.0.5 on sqllab_users using TCP/IP
+2025-11-04T13:24:10.224150Z	   39 Query	SELECT id, name, eid, salary, birth, ssn, password, nickname, email, address, phoneNumber
+          FROM credential
+2025-11-04T13:24:10.224852Z	   39 Quit	
+2025-11-04T13:24:10.224964Z	   38 Quit	
+2025-11-04T13:25:25.698765Z	   36 Quit	
+2025-11-04T13:27:49.928838Z	   40 Connect	seed@10.9.0.5 on sqllab_users using TCP/IP
+2025-11-04T13:27:49.930804Z	   40 Query	SELECT id, name, eid, salary, birth, ssn, phoneNumber, address, email,nickname,Password
+      FROM credential
+      WHERE name= 'alice' and Password='fdbe918bdae83000aa54747fc95fe0470fff4976'
+2025-11-04T13:27:49.932974Z	   40 Quit	
+2025-11-04T13:32:45.748825Z	   41 Connect	seed@10.9.0.5 on sqllab_users using TCP/IP
+2025-11-04T13:32:45.750925Z	   41 Query	SELECT id, name, eid, salary, birth, ssn, phoneNumber, address, email,nickname,Password
+      FROM credential
+      WHERE name= 'alice' and Password='fdbe918bdae83000aa54747fc95fe0470fff4976'
+2025-11-04T13:32:45.753802Z	   41 Quit	
+2025-11-04T13:33:18.992251Z	   42 Connect	seed@10.9.0.5 on sqllab_users using TCP/IP
+2025-11-04T13:33:18.992742Z	   42 Query	SELECT id, name, eid, salary, birth, ssn, phoneNumber, address, email,nickname,Password
+      FROM credential
+      WHERE name= 'alice' and Password='fdbe918bdae83000aa54747fc95fe0470fff4976'
+2025-11-04T13:33:18.993250Z	   42 Quit	
+2025-11-04T13:35:05.193207Z	   43 Connect	seed@10.9.0.5 on sqllab_users using TCP/IP
+2025-11-04T13:35:05.194243Z	   43 Query	SELECT id, name, eid, salary, birth, ssn, phoneNumber, address, email,nickname,Password
+      FROM credential
+      WHERE name= 'alice' and Password='fdbe918bdae83000aa54747fc95fe0470fff4976'
+2025-11-04T13:35:05.195270Z	   43 Quit	
+2025-11-04T13:35:55.120761Z	   44 Connect	seed@10.9.0.5 on sqllab_users using TCP/IP
+2025-11-04T13:35:55.122592Z	   44 Query	SELECT id, name, eid, salary, birth, ssn, phoneNumber, address, email,nickname,Password
+      FROM credential
+      WHERE name= 'alice' and Password='fdbe918bdae83000aa54747fc95fe0470fff4976'
+2025-11-04T13:35:55.124757Z	   44 Quit	
+2025-11-04T13:36:11.308443Z	   45 Connect	seed@10.9.0.5 on sqllab_users using TCP/IP
+2025-11-04T13:36:11.308847Z	   45 Query	SELECT id, name, eid, salary, birth, ssn, phoneNumber, address, email,nickname,Password
+      FROM credential
+      WHERE name= 'alice' and Password='fdbe918bdae83000aa54747fc95fe0470fff4976'
+2025-11-04T13:36:11.309314Z	   45 Quit	
+2025-11-04T13:37:17.130269Z	   46 Connect	seed@10.9.0.5 on sqllab_users using TCP/IP
+2025-11-04T13:37:17.131120Z	   46 Query	SELECT id, name, eid, salary, birth, ssn, phoneNumber, address, email,nickname,Password
+      FROM credential
+      WHERE name= 'alice' and Password='fdbe918bdae83000aa54747fc95fe0470fff4976'
+2025-11-04T13:37:17.132354Z	   46 Quit	
+2025-11-04T13:38:21.694981Z	   47 Connect	seed@10.9.0.5 on sqllab_users using TCP/IP
+2025-11-04T13:38:21.695982Z	   47 Query	SELECT id, name, eid, salary, birth, ssn, phoneNumber, address, email,nickname,Password
+      FROM credential
+      WHERE name= 'admin'; -- ' and Password='516b9783fca517eecbd1d064da2d165310b19759'
+2025-11-04T13:38:21.697192Z	   48 Connect	seed@10.9.0.5 on sqllab_users using TCP/IP
+2025-11-04T13:38:21.697466Z	   48 Query	SELECT id, name, eid, salary, birth, ssn, password, nickname, email, address, phoneNumber
+          FROM credential
+2025-11-04T13:38:21.697998Z	   48 Quit	
+2025-11-04T13:38:21.698084Z	   47 Quit	
+2025-11-04T13:40:25.496013Z	   49 Connect	seed@10.9.0.5 on sqllab_users using TCP/IP
+2025-11-04T13:40:25.498294Z	   49 Query	SELECT id, name, eid, salary, birth, ssn, phoneNumber, address, email,nickname,Password
+      FROM credential
+      WHERE name= 'admin'; -- ' and Password='516b9783fca517eecbd1d064da2d165310b19759'
+2025-11-04T13:40:25.501239Z	   50 Connect	seed@10.9.0.5 on sqllab_users using TCP/IP
+2025-11-04T13:40:25.501540Z	   50 Query	SELECT id, name, eid, salary, birth, ssn, password, nickname, email, address, phoneNumber
+          FROM credential
+2025-11-04T13:40:25.502076Z	   50 Quit	
+2025-11-04T13:40:25.502186Z	   49 Quit	
+2025-11-04T13:41:21.922002Z	   51 Connect	seed@10.9.0.5 on sqllab_users using TCP/IP
+2025-11-04T13:41:21.922778Z	   51 Query	SELECT id, name, eid, salary, birth, ssn, phoneNumber, address, email,nickname,Password
+      FROM credential
+      WHERE name= 'admin'; -- ' and Password='516b9783fca517eecbd1d064da2d165310b19759'
+2025-11-04T13:41:21.924196Z	   52 Connect	seed@10.9.0.5 on sqllab_users using TCP/IP
+2025-11-04T13:41:21.924715Z	   52 Query	SELECT id, name, eid, salary, birth, ssn, password, nickname, email, address, phoneNumber
+          FROM credential
+2025-11-04T13:41:21.925408Z	   52 Quit	
+2025-11-04T13:41:21.925724Z	   51 Quit	
+2025-11-04T13:41:36.525437Z	   53 Connect	seed@10.9.0.5 on sqllab_users using TCP/IP
+2025-11-04T13:41:36.526091Z	   53 Query	SELECT id, name, eid, salary, birth, ssn, phoneNumber, address, email,nickname,Password
+      FROM credential
+      WHERE name= 'admin'; -- ' and Password='516b9783fca517eecbd1d064da2d165310b19759'
+2025-11-04T13:41:36.527255Z	   54 Connect	seed@10.9.0.5 on sqllab_users using TCP/IP
+2025-11-04T13:41:36.528073Z	   54 Query	SELECT id, name, eid, salary, birth, ssn, password, nickname, email, address, phoneNumber
+          FROM credential
+2025-11-04T13:41:36.529124Z	   54 Quit	
+2025-11-04T13:41:36.529332Z	   53 Quit	
+2025-11-04T13:41:39.227186Z	   55 Connect	seed@10.9.0.5 on sqllab_users using TCP/IP
+2025-11-04T13:41:39.227847Z	   55 Query	SELECT id, name, eid, salary, birth, ssn, phoneNumber, address, email,nickname,Password
+      FROM credential
+      WHERE name= 'admin'; -- ' and Password='516b9783fca517eecbd1d064da2d165310b19759'
+2025-11-04T13:41:39.229795Z	   56 Connect	seed@10.9.0.5 on sqllab_users using TCP/IP
+2025-11-04T13:41:39.230448Z	   56 Query	SELECT id, name, eid, salary, birth, ssn, password, nickname, email, address, phoneNumber
+          FROM credential
+2025-11-04T13:41:39.231138Z	   56 Quit	
+2025-11-04T13:41:39.231298Z	   55 Quit	
+2025-11-04T13:42:18.193590Z	   57 Connect	seed@10.9.0.5 on sqllab_users using TCP/IP
+2025-11-04T13:42:18.194452Z	   57 Query	SELECT id, name, eid, salary, birth, ssn, phoneNumber, address, email,nickname,Password
+      FROM credential
+      WHERE name= 'admin'; -- ' and Password='516b9783fca517eecbd1d064da2d165310b19759'
+2025-11-04T13:42:18.196048Z	   58 Connect	seed@10.9.0.5 on sqllab_users using TCP/IP
+2025-11-04T13:42:18.196615Z	   58 Query	SELECT id, name, eid, salary, birth, ssn, password, nickname, email, address, phoneNumber
+          FROM credential
+2025-11-04T13:42:18.197261Z	   58 Quit	
+2025-11-04T13:42:18.197557Z	   57 Quit	
+2025-11-04T13:43:29.646350Z	   59 Connect	root@localhost on  using Socket
+2025-11-04T13:43:29.648143Z	   59 Query	select @@version_comment limit 1
+2025-11-04T13:46:48.047221Z	   59 Query	SELECT DATABASE()
+2025-11-04T13:47:11.131036Z	   59 Query	SELECT DATABASE()
+2025-11-04T13:47:11.133524Z	   59 Init DB	sqllab_users
+2025-11-04T13:47:11.135809Z	   59 Query	show databases
+2025-11-04T13:47:11.143447Z	   59 Query	show tables
+2025-11-04T13:47:11.146872Z	   59 Field List	credential 
+2025-11-04T13:47:20.059731Z	   59 Query	UPDATE credential SET address='test' where credential.name='Ted'
+2025-11-04T13:47:54.545465Z	   60 Connect	seed@10.9.0.5 on sqllab_users using TCP/IP
+2025-11-04T13:47:54.546529Z	   60 Quit	
+2025-11-04T13:48:28.034363Z	   61 Connect	seed@10.9.0.5 on sqllab_users using TCP/IP
+2025-11-04T13:48:28.035502Z	   61 Quit	
